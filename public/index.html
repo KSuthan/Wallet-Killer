@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
 
-  <title>Budget Tracker</title>
+  <title>Wallet Killer</title>
 </head>
 <body>
   <div class="wrapper">
@@ -43,5 +43,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="js/index.js"></script>
+  <script src="js/idb.js"></script>
 </body>
+(function() {
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+     .register('js/service-worker.js')
+     .then(() => console.log('Service Worker registered successfully!'))
+     .catch(error =>
+        console.log('Service Worker registration failed:', error)
+      );
+  }
+})();
+</script>
 </html>
